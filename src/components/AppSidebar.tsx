@@ -31,9 +31,10 @@ import {
   NotebookText,
 } from "lucide-react";
 import Image from "next/image";
+import { SidebarItem } from "@/types/type";
 
 // Menu items
-const items = [
+const items:SidebarItem[] = [
   { title: "Dashboard", url: "#", icon: LayoutDashboard, tooltip: "Dashboard" },
   { title: "Attendance", url: "#", icon: CalendarDays, tooltip: "Attendance" },
   { title: "Leaves", url: "#", icon: Calendar, tooltip: "Leaves" },
@@ -91,20 +92,22 @@ const AppSidebar = () => {
                     <SidebarMenuButton tooltip={item.tooltip} asChild>
                       <a
                         href={item.url}
-                        className={`flex flex-col gap-2 h-auto ${
+                        className={`gap-2 h-auto ${
                           item.title === "Dashboard"
                             ? "bg-indigo-50"
                             : "bg-transparent"
                         }`}
                       >
                         <item.icon
-                          className={`!h-6 !w-6 ${
+                          className={`!h-[22px] md:m-auto !w-6 ${
                             item.title === "Dashboard"
                               ? "text-indigo-500"
-                              : "text-gray-400"
+                              : "text-gray-500"
                           }  `}
                         />
-                        {/* <span className="text-xs">{item.title}</span> */}
+                        <span className="text-xs block md:hidden">
+                          {item.title}
+                        </span>
                       </a>
                     </SidebarMenuButton>
                   </TooltipTrigger>
