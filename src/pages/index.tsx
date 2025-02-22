@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Tab from "@/components/Tab";
+import StatusCard from "@/components/status/StatusCard";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -19,6 +20,7 @@ export default function Home() {
     >
       <Nav />
       <Tab />
+      <StatusCard />
       <h1>main page</h1>
     </div>
   );
