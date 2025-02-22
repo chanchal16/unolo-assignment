@@ -39,12 +39,12 @@ export type Metrics = {
 
 // teamwise attendance
 export type teamAttendance = {
-  team:string;
+  team: string;
   present: number;
   absent: number;
   total: number;
   attendanceRate?: number;
-}
+};
 
 // off duty employee
 export type Employee = {
@@ -53,4 +53,21 @@ export type Employee = {
   team: string;
   role: string;
   reason: string;
+};
+
+// employee list
+export enum Status {
+  never = "never-marked",
+  punchedin = "punched-in",
+  punchedout = "punched-out",
+}
+
+export type EmployeeDetail = {
+  id: number;
+  initials: string;
+  name: string;
+  status: Status;
+  location: string;
+  timestamp: string | null;
+  source: string | null;
 };
