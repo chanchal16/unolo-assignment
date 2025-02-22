@@ -36,3 +36,21 @@ export type Metrics = {
     coverage: string;
   };
 };
+
+// teamwise attendance
+export type teamAttendance = {
+  team:string;
+  present: number;
+  absent: number;
+  total: number;
+  attendanceRate?: number;
+}
+
+// off duty employee
+export type Employee = {
+  id: number;
+  name: string;
+  team: string;
+  role: string;
+  reason: string;
+};
