@@ -46,17 +46,17 @@ export function DataTable<TData, TValue>({ columns, data }: any) {
       sorting,
       columnFilters,
     },
-    initialState:{
-        pagination:{
-            pageSize: 5,
-        }
-    }
+    initialState: {
+      pagination: {
+        pageSize: 5,
+      },
+    },
   });
 
   return (
     <div>
       {/* Search Input */}
-      <div className="flex items-center py-4">
+      <div className="flex items-center pb-3">
         <Input
           placeholder="Search employees..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
@@ -129,15 +129,15 @@ export function DataTable<TData, TValue>({ columns, data }: any) {
       </div>
 
       {/* Pagination Controls */}
-      <div className="flex items-center justify-end gap-3 mt-4">
+      <div className="flex items-center justify-end gap-3 mt-3">
         <button
           className="text-gray-500 cursor-pointer"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          <ChevronsLeft />
+          <ChevronsLeft size={16} />
         </button>
-        <span>
+        <span className="text-sm">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </span>
@@ -146,7 +146,7 @@ export function DataTable<TData, TValue>({ columns, data }: any) {
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
-          <ChevronsRight />
+          <ChevronsRight size={16} />
         </button>
       </div>
     </div>
