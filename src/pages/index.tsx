@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Tab from "@/components/Tab";
+import EmployeeList from "@/components/employee-list/EmployeeList";
 import OffDutyEmployeesTable from "@/components/off-duty/OffDutyEmployeesTable";
 import StatusCard from "@/components/status/StatusCard";
 import TeamAttendance from "@/components/team-attendance/TeamAttendance";
@@ -23,9 +24,15 @@ export default function Home() {
       <Nav />
       <Tab />
       <StatusCard />
-      <TeamAttendance />
-      <OffDutyEmployeesTable />
-      <h1>main page</h1>
+      <section className="grid grid-cols-1 gap-4 md:grid-cols-2 my-3">
+        <div>
+          <EmployeeList />
+        </div>
+        <div className="grid gap-4">
+          <TeamAttendance />
+          <OffDutyEmployeesTable />
+        </div>
+      </section>
     </div>
   );
 }

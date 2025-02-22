@@ -9,17 +9,22 @@ export default function OffDutyEmployeesTable() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/off-duty-employees")
-      .then((res) => res.json())
-      .then((data) => {
+    async function fetchData() {
+      try {
+        const res = await fetch("/api/off-duty-employees");
+        const data = await res.json();
         setData(data.employees);
         setLoading(false);
-      });
+      } catch (error) {
+        console.error("Failed to fetch status data:", error);
+      }
+    }
+    fetchData();
   }, []);
 
   return (
-    <div className="border rounded-lg shadow-sm p-4">
-      <h2 className="text-lg font-semibold mb-4">Off-Duty Employees</h2>
+    <div className="border rounded-xl shadow-md p-3">
+      <h2 className="text-base font-semibold mb-2">Off-Duty Employees</h2>
       <DataTable columns={columns} data={data} loading={loading} />
     </div>
   );

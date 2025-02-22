@@ -20,7 +20,8 @@ const TeamAttendance = () => {
     fetchData();
   }, []);
   return (
-    <div className="shadow-md rounded-xl p-2 ">
+    <div className="shadow-md rounded-xl p-3 ">
+      <h3 className="text-base font-semibold mb-2">Teamwise Attendance</h3>
       <table className="w-full">
         <thead>
           <tr className="border-b text-sm">
@@ -43,7 +44,7 @@ const TeamAttendance = () => {
         </thead>
         <tbody>
           {teams.map((team) => (
-            <tr key={team.team} className="border-b text-sm">
+            <tr key={team.team} className="text-sm">
               <td className="py-2 px-2">{team.team}</td>
               <td className="text-center py-2 px-4">
                 <span className="px-2 py-1 bg-emerald-50 text-emerald-700 rounded">
