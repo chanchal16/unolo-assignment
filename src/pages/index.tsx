@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Tab from "@/components/Tab";
+import DailyHoursChart from "@/components/daily-hours/DailyHoursChart";
 import EmployeeList from "@/components/employee-list/EmployeeList";
 import ExpenseChart from "@/components/expenses/ExpenseChart";
 import Metrics from "@/components/metrics/Metrics";
@@ -39,6 +40,7 @@ export default function Home() {
         <Metrics />
         <ExpenseChart />
       </section>
+      <DailyHoursChart />
     </div>
   );
 }
