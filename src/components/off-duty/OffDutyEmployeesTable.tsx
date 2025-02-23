@@ -23,7 +23,7 @@ export default function OffDutyEmployeesTable() {
   }, []);
 
   return (
-    <div className="border rounded-xl shadow-md p-3">
+    <div className="border rounded-xl shadow-md p-3 overflow-auto">
       {!loading && (
         <>
           <h2 className="text-base font-semibold mb-2">Off-Duty Employees</h2>
