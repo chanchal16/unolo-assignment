@@ -85,9 +85,12 @@ export interface MetricCardProps {
     lineColor: string;
   };
 }
-
 export interface ExpenseData {
   name: string;
   value: number;
   color: string;
+}
+export interface DailyHourData {
+  date: string;
+  hours: string;
 }
