@@ -70,4 +70,18 @@ export type EmployeeDetail = {
   location: string;
   timestamp: string | null;
   source: string | null;
+  timeAgo: string | null;
 };
+
+export interface MetricCardProps {
+  id: string;
+  label: string;
+  icon: string;
+  value: number;
+  yesterday: number;
+  trend: number[];
+  color: {
+    bgLight: string;
+    lineColor: string;
+  };
+}
