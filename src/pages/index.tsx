@@ -9,6 +9,7 @@ import StatusCard from "@/components/status/StatusCard";
 import TaskStatusChart from "@/components/task-status/TaskStatusChart";
 import TeamAttendance from "@/components/team-attendance/TeamAttendance";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SignIn, useUser } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,10 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
+  const { user } = useUser();
+  if (!user) {
+    return <SignIn routing="hash" signInUrl="/sign-in" />;
+  }
   return (
     <div
       className={`${geistSans.variable} ${geistMono.variable} w-full flex flex-col gap-4 pb-3 px-4 min-h-screen font-[family-name:var(--font-geist-sans)]`}
@@ -45,7 +50,6 @@ export default function Home() {
         <DailyHoursChart />
         <TaskStatusChart />
       </section>
-      
     </div>
   );
 }
