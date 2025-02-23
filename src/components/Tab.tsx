@@ -38,7 +38,7 @@ const tabItems: TabItem[] = [
 
 const Tab = () => {
   return (
-    <div className={`flex gap-6 border-b-2 border-gray-100 `}>
+    <div className={`flex gap-6 overflow-auto border-b-2 border-gray-100 `}>
       {tabItems.map((tabItem) => (
         <button
           key={tabItem.label}
