@@ -27,12 +27,9 @@ const ExpenseChart = () => {
     // const interval = setInterval(fetchData, 5000); // Auto-refresh every 5 seconds
 
     // return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
+  }, [selectedRange]);
 
-  const handleChange = (val: any) => {
-    setSelectedRange(val);
-    fetchData();
-  };
+  
 
   if (!expenses) return <p>Loading...</p>;
   return (
@@ -42,7 +39,7 @@ const ExpenseChart = () => {
         <Select
           defaultValue="This Month"
           value={selectedRange}
-          onValueChange={handleChange}
+          onValueChange={setSelectedRange}
         >
           <SelectTrigger className="">
             <SelectValue placeholder="Difficulty" />
