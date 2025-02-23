@@ -30,16 +30,16 @@ const MetricCard = ({
   const trendData = trend.map((y, i) => ({ day: `Day ${i + 1}`, value: y }));
   const IconComponent = iconMap[icon as keyof typeof iconMap];
   return (
-    <div className="p-4 space-y-2 shadow-md">
+    <div className="p-4 space-y-2 shadow-md rounded-xl">
       <div className="flex justify-between items-start">
-        <div className="space-y-2">
+        <div>
           <div className="flex items-center gap-2">
             <div className={`p-2 rounded-lg ${color.bgLight}`}>
               {IconComponent}
             </div>
             <span className="text-sm text-gray-500">{label}</span>
           </div>
-          <div className="flex items-baseline gap-2">
+          <div className="flex items-baseline gap-2 mt-6">
             <span className="text-2xl font-bold">{value}</span>
             <div
               className={`flex items-center text-sm ${
@@ -71,7 +71,7 @@ const MetricCard = ({
         </div>
       </div>
 
-      <div className="mt-4 flex items-center text-sm text-gray-500">
+      <div className="mt-6 flex items-center text-sm text-gray-500">
         <span>Yesterday: {yesterday}</span>
       </div>
     </div>
