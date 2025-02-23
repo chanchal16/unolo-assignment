@@ -94,3 +94,10 @@ export interface DailyHourData {
   date: string;
   hours: string;
 }
+export interface TaskStatus {
+  total: number;
+  notStarted: number;
+  delayed: number;
+  inProgress: number;
+  completed: number;
+}
