@@ -6,6 +6,7 @@ import ExpenseChart from "@/components/expenses/ExpenseChart";
 import Metrics from "@/components/metrics/Metrics";
 import OffDutyEmployeesTable from "@/components/off-duty/OffDutyEmployeesTable";
 import StatusCard from "@/components/status/StatusCard";
+import TaskStatusChart from "@/components/task-status/TaskStatusChart";
 import TeamAttendance from "@/components/team-attendance/TeamAttendance";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -40,7 +41,11 @@ export default function Home() {
         <Metrics />
         <ExpenseChart />
       </section>
-      <DailyHoursChart />
+      <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 my-3">
+        <DailyHoursChart />
+        <TaskStatusChart />
+      </section>
+      
     </div>
   );
 }
