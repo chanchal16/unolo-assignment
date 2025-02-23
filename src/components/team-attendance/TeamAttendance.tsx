@@ -10,7 +10,6 @@ const TeamAttendance = () => {
     async function fetchData() {
       try {
         const res = await fetch("/api/attendance");
-        console.log("res", res);
         const data = await res.json();
         setTeams(data.attendanceData);
       } catch (error) {
@@ -20,7 +19,7 @@ const TeamAttendance = () => {
     fetchData();
   }, []);
   return (
-    <div className="shadow-md rounded-xl p-3 ">
+    <div className="shadow-md rounded-xl p-3 overflow-auto ">
       <h3 className="text-base font-semibold mb-2">Teamwise Attendance</h3>
       <table className="w-full">
         <thead>
