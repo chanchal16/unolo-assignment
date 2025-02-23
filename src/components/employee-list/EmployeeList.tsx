@@ -6,7 +6,9 @@ import { EmployeeDetail, Status } from "@/types/type";
 const EmployeeList = () => {
   const [employees, setEmployees] = useState<EmployeeDetail[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [filteredEmployees, setFilteredEmployees] = useState<EmployeeDetail[]>([]);
+  const [filteredEmployees, setFilteredEmployees] = useState<EmployeeDetail[]>(
+    []
+  );
 
   useEffect(() => {
     async function fetchData() {
@@ -37,11 +39,20 @@ const EmployeeList = () => {
     return () => clearTimeout(debounceTimer); // Cleanup timer on unmount or query change
   }, [searchQuery, employees]);
 
-  const getStatusBadge = (status:Status) => {
-    const statusConfig:any = {
-      'punched-in': { class: 'bg-emerald-50 px-1 text-emerald-700', text: 'Punched In' },
-      'punched-out': { class: 'bg-amber-50 px-1 text-amber-700', text: 'Punched Out' },
-      'never-marked': { class: 'bg-gray-50 px-1 text-gray-700', text: 'Never Marked' }
+  const getStatusBadge = (status: Status) => {
+    const statusConfig: any = {
+      "punched-in": {
+        class: "bg-emerald-50 px-1 text-emerald-700",
+        text: "Punched In",
+      },
+      "punched-out": {
+        class: "bg-amber-50 px-1 text-amber-700",
+        text: "Punched Out",
+      },
+      "never-marked": {
+        class: "bg-gray-50 px-1 text-gray-700",
+        text: "Never Marked",
+      },
     };
     return statusConfig[status];
   };
@@ -61,8 +72,12 @@ const EmployeeList = () => {
           </div>
           <div className="relative">
             <Search className="h-4 w-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <Input placeholder="Search employees..." className="pl-9 w-64" value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)} />
+            <Input
+              placeholder="Search employees..."
+              className="pl-9 w-64"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
       </div>
@@ -85,8 +100,8 @@ const EmployeeList = () => {
               <div className="flex items-center gap-2">
                 <h3 className="font-medium text-gray-900">{employee.name}</h3>
                 <span className={getStatusBadge(employee.status).class}>
-                    {getStatusBadge(employee.status).text}
-                  </span>
+                  {getStatusBadge(employee.status).text}
+                </span>
               </div>
 
               {/* Location */}
@@ -98,10 +113,10 @@ const EmployeeList = () => {
               )}
 
               {/* Timestamp */}
-              {employee.timestamp && (
+              {employee.timeAgo && (
                 <div className="flex items-center gap-2 mt-1 text-sm text-gray-500">
                   <Clock className="h-3 w-3" />
-                  <span>{employee.timestamp}</span>
+                  <span>{employee.timeAgo}</span>
                   {employee.source && (
                     <>
                       <span className="text-gray-300">•</span>

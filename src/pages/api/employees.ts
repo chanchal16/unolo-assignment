@@ -12,8 +12,9 @@ export default function handler(
       name: "Kumar Viswas",
       status: Status["never"],
       location: "NA",
-      timestamp: null,
+      timeAgo: null,
       source: null,
+      timestamp: null,
     },
     {
       id: 2,
@@ -22,8 +23,9 @@ export default function handler(
       status: Status["punchedin"],
       location:
         "514 The Palm Springs Plaza, Golf Course Rd, DLF Phase 5, Sector 54",
-      timestamp: "7 hours ago",
+      timeAgo: "7 hours ago",
       source: "Unolo",
+      timestamp: "5:14 PM",
     },
     {
       id: 3,
@@ -31,8 +33,9 @@ export default function handler(
       name: "Mohan Bishnoi",
       status: Status["punchedout"],
       location: "Vikas Marg, South City II, Sector 49, Gurugram",
-      timestamp: "2 months ago",
+      timeAgo: "2 months ago",
       source: null,
+      timestamp: "19-12-2024",
     },
     {
       id: 4,
@@ -41,8 +44,9 @@ export default function handler(
       status: Status["punchedin"],
       location:
         "514 The Palm Springs Plaza, Golf Course Rd, DLF Phase 5, Sector 54",
-      timestamp: "7 hours ago",
+      timeAgo: "6 hours ago",
       source: "Unolo",
+      timestamp: "4:10 PM",
     },
   ];
   res.status(200).json({ employees });
