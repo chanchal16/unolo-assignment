@@ -85,3 +85,9 @@ export interface MetricCardProps {
     lineColor: string;
   };
 }
+
+export interface ExpenseData {
+  name: string;
+  value: number;
+  color: string;
+}
