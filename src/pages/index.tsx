@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} w-full px-4 min-h-screen font-[family-name:var(--font-geist-sans)]`}
+      className={`${geistSans.variable} ${geistMono.variable} w-full flex flex-col gap-4 pb-3 px-4 min-h-screen font-[family-name:var(--font-geist-sans)]`}
     >
       <Nav />
       <Tab />

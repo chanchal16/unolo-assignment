@@ -2,6 +2,7 @@
 import { DonutChart } from "@/components/DonutChart";
 import { cn } from "@/lib/utils";
 import { AttendanceStatus, Metrics } from "@/types/type";
+import { Skeleton } from "../ui/skeleton";
 
 export const StatusChart = ({
   statusData,
@@ -12,7 +13,9 @@ export const StatusChart = ({
 }) => {
   return (
     <div className="shadow-md rounded-xl pt-2 px-2 pb-3">
-      <h3 className="text-base font-medium">Employee Status</h3>
+      {!statusData.length  && (<Skeleton className="w-full h-full rounded-xl" />)}
+      {!!statusData.length && (<>
+        <h3 className="text-base font-medium">Employee Status</h3>
       <span className="py-1 px-2 bg-gray-200 rounded-md text-xs">
         Total: {metrics?.totalEmployees}
       </span>
@@ -62,6 +65,8 @@ export const StatusChart = ({
           </div>
         ))}
       </div>
+      </>)}
+      
     </div>
   );
 };

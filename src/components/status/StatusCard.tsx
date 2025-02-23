@@ -22,9 +22,9 @@ const StatusCard = () => {
     }
 
     fetchData();
-    // const interval = setInterval(fetchData, 5000); // Auto-refresh every 5 seconds
+    const interval = setInterval(fetchData, 5000);
 
-    // return () => clearInterval(interval); // Cleanup interval on unmount
+    return () => clearInterval(interval); 
   }, []);
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3  p-2 gap-5">

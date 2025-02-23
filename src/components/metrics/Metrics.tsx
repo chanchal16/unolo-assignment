@@ -1,6 +1,7 @@
 import { MetricCardProps } from "@/types/type";
 import React, { useEffect, useState } from "react";
 import MetricCard from "./MetricCard";
+import { Skeleton } from "../ui/skeleton";
 
 const Metrics = () => {
   const [metrics, setMetrics] = useState<MetricCardProps[]>([]);
@@ -18,6 +19,7 @@ const Metrics = () => {
   }, []);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 rounded-xl">
+      {!metrics.length && <Skeleton className="w-full h-full rounded-xl" />}
       {metrics?.map((metric) => (
         <MetricCard key={metric.id} {...metric} />
       ))}

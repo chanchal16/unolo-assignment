@@ -26,8 +26,9 @@ import {
   ChevronsLeft,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Skeleton } from "../ui/skeleton";
 
-export function DataTable<TData, TValue>({ columns, data }: any) {
+export function DataTable<TData, TValue>({ columns, data, loading }: any) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -101,6 +102,16 @@ export function DataTable<TData, TValue>({ columns, data }: any) {
           </TableHeader>
 
           <TableBody>
+            {loading &&
+              Array.from({ length: 4 }).map((_, i) => (
+                <TableRow key={i}>
+                  {columns.map((column: any) => (
+                    <TableCell key={column.accessorKey as string}>
+                      <Skeleton className="h-5 w-24" />
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id}>

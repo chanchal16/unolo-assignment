@@ -24,8 +24,12 @@ export default function OffDutyEmployeesTable() {
 
   return (
     <div className="border rounded-xl shadow-md p-3">
-      <h2 className="text-base font-semibold mb-2">Off-Duty Employees</h2>
-      <DataTable columns={columns} data={data} loading={loading} />
+      {!loading && (
+        <>
+          <h2 className="text-base font-semibold mb-2">Off-Duty Employees</h2>
+          <DataTable columns={columns} data={data} loading={loading} />
+        </>
+      )}
     </div>
   );
 }
