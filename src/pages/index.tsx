@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Tab from "@/components/Tab";
 import EmployeeList from "@/components/employee-list/EmployeeList";
+import ExpenseChart from "@/components/expenses/ExpenseChart";
 import Metrics from "@/components/metrics/Metrics";
 import OffDutyEmployeesTable from "@/components/off-duty/OffDutyEmployeesTable";
 import StatusCard from "@/components/status/StatusCard";
@@ -34,7 +35,10 @@ export default function Home() {
           <OffDutyEmployeesTable />
         </div>
       </section>
-      <Metrics />
+      <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 my-3">
+        <Metrics />
+        <ExpenseChart />
+      </section>
     </div>
   );
 }
