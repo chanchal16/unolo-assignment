@@ -34,7 +34,7 @@ import Image from "next/image";
 import { SidebarItem } from "@/types/type";
 
 // Menu items
-const items:SidebarItem[] = [
+const items: SidebarItem[] = [
   { title: "Dashboard", url: "#", icon: LayoutDashboard, tooltip: "Dashboard" },
   { title: "Attendance", url: "#", icon: CalendarDays, tooltip: "Attendance" },
   { title: "Leaves", url: "#", icon: Calendar, tooltip: "Leaves" },
@@ -65,7 +65,7 @@ const AppSidebar = () => {
     <TooltipProvider>
       {isMobile && (
         <button
-          className="p-2 m-2 bg-blue-500 text-white rounded fixed top-0 left-0 z-50"
+          className="p-2 m-2 text-gray-500 hover:bg-gray-50 rounded fixed top-0 left-0 z-50"
           onClick={toggleSidebar}
         >
           {openMobile ? <X /> : <Menu />}
@@ -76,11 +76,18 @@ const AppSidebar = () => {
       >
         <SidebarHeader>
           <Image
-            className="m-auto"
+            className="hidden sm:block m-auto"
             src={"/logo.jpeg"}
             alt="logo"
             width={26}
             height={26}
+          />
+          <Image
+            src={"/unolo_logo.webp"}
+            alt="mob-logo"
+            width={54}
+            height={40}
+            className="block sm:hidden"
           />
         </SidebarHeader>
         <SidebarContent className="p-2">

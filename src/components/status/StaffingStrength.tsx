@@ -45,7 +45,7 @@ const StaffingStrength = ({
             </div>
           </div>
 
-          <div className="mt-6 w-[95%] absolute bottom-2 flex items-center gap-2 justify-between px-4 py-3 bg-gray-50 rounded-lg">
+          <div className="sm:mt-6 w-[95%] sm:absolute sm:bottom-2 flex items-center gap-2 justify-between px-4 py-3 bg-gray-50 rounded-lg">
             <span className="text-sm text-gray-600">Strength Coverage</span>
             <div className="flex items-center  gap-2">
               <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
