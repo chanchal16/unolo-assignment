@@ -1,6 +1,10 @@
 # Unolo Dashboard
 A dashboard showcasing employee details
 
+![image](https://github.com/user-attachments/assets/85ed5b4d-40f3-4b66-9c4c-a7f3e71f7c42)
+
+![image](https://github.com/user-attachments/assets/fc52590f-6f14-42dd-9f98-a3111cd2dd34)
+
 ## Teck Stack
 - Next.js
 - TypeScript
