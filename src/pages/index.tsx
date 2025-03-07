@@ -24,7 +24,11 @@ const geistMono = Geist_Mono({
 export default function Home() {
   const { user } = useUser();
   if (!user) {
-    return <SignIn routing="hash" signInUrl="/sign-in" />;
+    return (
+      <div className="m-auto">
+        <SignIn routing="hash" signInUrl="/sign-in" />
+      </div>
+    );
   }
   return (
     <div
